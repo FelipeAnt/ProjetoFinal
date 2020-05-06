@@ -81,6 +81,7 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin-top: 0;
   margin-bottom: 1rem;
+  font-size: 19px;
 }
 
 abbr[title],
@@ -404,9 +405,11 @@ h6, .h6 {
 }
 
 .display-3 {
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   font-weight: 300;
   line-height: 1.2;
+  text-align: center;
+  color: aliceblue;
 }
 
 .display-4 {

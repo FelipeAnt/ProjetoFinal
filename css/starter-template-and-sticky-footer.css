@@ -1,20 +1,17 @@
+body {
+  padding-top: 3rem;
+}
+
 /*footer*/
 .container {
     width: auto;
     max-width: 680px;
     padding: 0 15px;
+   
   }
   
   .footer {
     background-color: rgb(32, 32, 32);
-    text-align: center;
-  }
-/*starter template*/
-  body {
-    padding-top: 5rem;
-  }
-  .starter-template {
-    padding: 3rem 1.5rem;
     text-align: center;
   }
 
@@ -26,4 +23,9 @@
     margin-right: auto;
     margin-left: auto;
     max-width: 720px;
+ }
+
+ #backone{
+  background-image: url('/img/back.jpg');
+  background-size: 100%;
  }
