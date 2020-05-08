@@ -16,6 +16,39 @@
      text-align: center
       }
   </style>
+
+      <!--Solução questão 4-->
+      <script type="text/javascript">
+          function calculo_media(){
+          var nomealuno = mediaForm.nomealuno.value;
+          var disciplina= mediaForm.disciplina.value;
+          var nota1     = mediaForm.nota1.value;
+          var nota2     = mediaForm.nota2.value;
+          
+          var media = (parseInt(nota1) + parseInt(nota2)) /2;
+
+          if (media <= 3) {
+            var aviso = "REPROVADO";
+          }
+          else if ((media >3) && (media <7)) {
+            var aviso = "RECUPERAÇÃO";
+          }
+          else {
+            var aviso = "APROVADO";
+          }
+          
+          document.getElementById("resultado").innerHTML = 
+          "------------------------------ <b>RESULTADO DO ALUNO</b> ------------------------"+
+          "<br>"+nomealuno.toUpperCase()+
+          ", <b>Você foi</b> "+aviso+
+          " na disciplina "+disciplina.toUpperCase()+
+          " com média " +media+
+          "<br>------------------------------------------------------------------------------------"
+        
+        }
+        
+      </script>
+
     <title>Antonio Felipe</title>
   </head>
   <body>
@@ -43,7 +76,60 @@
         </div>
     </nav>
 
-    </br>
+    <main role="main" class="container">
+
+      <div class="starter-template">
+        <h1>Questão - 01</h1>
+        <p class="lead">Software para calcular média aritmética.</p>
+      </div>
+
+      <div>
+        <form name="mediaForm" id="mediaForm" action="#">
+          <div class="form-row">
+            <div class="col">
+              <label>Aluno</label>
+              <input type="text" class="form-control" id="nomealuno" name="nomealuno" placeholder="Nome completo do Aluno" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="col">
+              <label>Disciplina</label>
+              <select class="custom-select" id="disciplina" name="disciplina" required>
+                <option selected disabled value="">Selecione uma disciplina</option>
+                <option value="ProgWeb">Programação Web</option>
+                <option value="bd">Banco de Dados</option>
+                <option value="poo">Programação Orientada a Objeto</option>
+                <option value="direito">Direito</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label>Nota I</label>
+              <input type="number" class="form-control" id="nota1" name="nota1" placeholder="Primeira Nota" required>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label>Nota II</label>
+              <input type="number" class="form-control" id="nota2" name="nota2" placeholder="Segunda Nota" required>
+            </div>
+          </div>
+
+
+
+          <button onclick="calculo_media()" class="btn btn-outline-primary float-right" type="button">Calcular</button>
+        </form>
+      </div>
+      
+      <br><br>        
+        <p id="resultado">RESULTADO</p>
+      
+
+    </main>
+    
+    </br><br>
     <footer class="footer mt-auto py-3">
         <div class="container">
         <span class="text-muted">©2020, Antonio Felipe - Codi in <a target="_blank" href="https://github.com/FelipeAnt/ProjetoFinal">GitHub</a> </span>

@@ -16,6 +16,59 @@
      text-align: center
       }
   </style>
+
+      <!--Solução questão 4-->
+      <script type="text/javascript">
+          function calculo_imc(){
+          var paciente = imcForm.paciente.value;
+          var altura   = imcForm.altura.value;
+          var peso     = imcForm.peso.value;
+          
+          var alturax2 = (altura * altura);
+          
+          var calculo = (peso/alturax2);
+          
+          if(calculo<18.5){
+          var nivel_obs = "Baixo Peso.";
+          var aviso = "Peso baixo para a altura. Maior probalidade de anorexia.";
+          }
+          else if ((calculo>=18.5) && (calculo<24.9)) {
+          var nivel_obs = "Peso Normal.";
+          var aviso = "Maior probabilidade de ser um indivíduo saudável.";
+          }
+          
+          else if ((calculo>=25) && (calculo<29.9)) {
+          var nivel_obs = "Pré-obesidade.";
+          var aviso = "Alguma probalidade de problemas de saúde. Predisposição a tornar-se obeso.";
+          }
+          else if ((calculo>=30) && (calculo<34.9)) {
+          var nivel_obs = "Obesidade Grau 1.";
+          var aviso = "Risco moderado de diabetes tipo II, hipertensão, colesterol, cardiopatia.";
+          }
+          else if ((calculo>=35) && (calculo<39.9)) {
+          var nivel_obs = "Obesidade Grau 2.";
+          var aviso = "Risco grave. Aumenta o risco das doenças associadas. O risco de mortalidade aumenta 50%.";
+          }
+          else {
+            var nivel_obs = "Obesidade Grau 3 ou obesidade mórbida";
+            var aviso     = "Risco muito grave. O risco de doenças associadas assim como a mortalidade aumenta 90%";
+          }
+
+          document.getElementById("resultado").innerHTML = 
+          "----------------------------------- <b>CALCULO DO IMC</b> ----------------------------"+
+          "<br><b>Paciente:</b> "+paciente+
+          "<br><b>Peso:</b> "+peso+
+          "<br><b>Altura:</b> "+altura+
+          "<br><b>IMC:</b> " +calculo.toFixed(2)+
+          "<br>Olá "+paciente+ 
+          ", você está no nível de obesidade: "+nivel_obs+
+          "Com este nível de IMC você está propenso a apresentar os seguintes problemas de saúde: "+aviso+
+          "<br>-------------------------------------------------------------------------------------"
+        
+        }
+        
+      </script>
+
     <title>Antonio Felipe</title>
   </head>
   <body>
@@ -43,7 +96,47 @@
         </div>
     </nav>
 
-    </br>
+    <main role="main" class="container">
+
+      <div class="starter-template">
+        <h1>Questão - 02</h1>
+        <p class="lead">Software para calculo do IMC.</p>
+      </div>
+
+      <div>
+        <form name="imcForm" id="imcForm" action="#">
+          <div class="form-row">
+            <div class="col">
+              <label>Paciente</label>
+              <input type="text" class="form-control" id="paciente" name="paciente" placeholder="Nome completo do Paciente" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label>Peso</label>
+              <input type="text" class="form-control" id="peso" name="peso" placeholder="Peso do Paciente" required>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label>Altura</label>
+              <input type="number" class="form-control" id="altura" name="altura" placeholder="Altura do Paciente" required>
+            </div>
+          </div>
+
+
+
+          <button onclick="calculo_imc()" class="btn btn-outline-primary float-right" type="button">Calcular</button>
+        </form>
+      </div>
+      
+      <br><br>        
+        <p id="resultado">RESULTADO</p>
+      
+
+    </main>
+    
+    </br><br>
     <footer class="footer mt-auto py-3">
         <div class="container">
         <span class="text-muted">©2020, Antonio Felipe - Codi in <a target="_blank" href="https://github.com/FelipeAnt/ProjetoFinal">GitHub</a> </span>
