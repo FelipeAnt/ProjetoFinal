@@ -405,11 +405,12 @@ h6, .h6 {
 }
 
 .display-3 {
+  padding-top: 6rem;
   font-size: 3.5rem;
   font-weight: 300;
   line-height: 1.2;
   text-align: center;
-  color: aliceblue;
+  color: #93dd2f;
 }
 
 .display-4 {
